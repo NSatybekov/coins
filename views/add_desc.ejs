@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="header">
+    <nav> 
+        <ul class="nav_links"> 
+            <li><a href="/"> Main page </a></li>
+            <li><a >    Profile  </a></li>
+            <li><a href="/users">    Users list   </a></li>
+            <li><a>    Logout  </a></li>
+        </ul>
+    </nav>
+  </div>
+  <h1> <%= title %></h1>
+            <form method="POST" action=""> 
+                <label for="description">
+                    <input type="text" placeholder="Enter description of your user" name="description" id="description" required="true" class="desc_field">
+                    <button type="submit"> Submit </button>
+                </label>
+
+            </form>
+
+</body>
+</html>

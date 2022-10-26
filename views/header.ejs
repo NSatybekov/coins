@@ -8,11 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-  <%- include('header.ejs')%>
-    <h1>Hi there <%= username %></h1>
-    <a href="/users"> go to users list </a>
-    <form action="/logout" method="POST">
-      <button type="submit">Log Out</button>
-    </form>
+  <div class="header">
+    <nav> 
+        <ul class="nav_links"> 
+            <li><a href="/"> Main page </a></li>
+            <li><a >    Profile  </a></li>
+            <li><a href="/users">    Users list   </a></li>
+            <li><a>    Admin  </a></li>
+        </ul>
+    </nav>
+  </div>
+
 </body>
 </html>

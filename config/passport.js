@@ -47,7 +47,7 @@ exports.sessionDetails = {
         mongoUrl: process.env.DB_URL
     }),
     cookie: {
-        maxAge: 1000 * 30
+        maxAge: 1000 * 60 * 10
     }
 }
 
@@ -67,10 +67,16 @@ exports.checkNotAuthenticated = (req, res, next) => {
   }
 
 
+exports.checkProfileOwner = (req, res, next) => {
+    if(req.params.id == req.user._id) {
+       return next()
+    }
+    res.send('Ty sho ohuel, tebe nelzya etogo delat ty ne owner')
+}
+
 function validPassword(password, hash, salt) {
     const hashVerify = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
     return hash === hashVerify;
 }
 // создать подключение и запись в БД - как затестить хэширование и солтинг
-
 

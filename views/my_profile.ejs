@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+  <%- include('header.ejs')%>
+  <div class="user_container"> 
+  <div class="profile_info">
+    <h1> <%= title %> </h1>
+    <p> Profile name : <%= name %> </p>
+    <p> Coins amount : <%= coins %> </p>
+    <p> Your role is : <%= role %> </p>
+    <p> <%=  description%> </p>
+        <p > <a href=<%=userUrl%>> Add description </a> </p>
+      </div>
+      <div class="received_transactions"> 
+          <h2> Your received transactions</h2>
+          <ul>
+            <% receivedTrans.forEach(function(transaction) { %>
+               <li><a href=<%= transaction.sender.url %> > Sender : <%= transaction.sender.username %>, Coins :   <%= transaction.amount %>, Message : <%= transaction.message %>   </a></li>
+            <% }) %> 
+           </ul>
+      </div>
+      <div class="sent_transactions"> 
+          <h2> Your sended transactions</h2>
+          <ul>
+            <% sendedTrans.forEach(function(transaction) { %>
+               <li><a href=<%= transaction.receiver.url %>> Sended to : <%= transaction.receiver.username %>, Coins :   <%= transaction.amount %>, Message : <%= transaction.message %>  </a></li>
+            <% }) %> 
+           </ul>
+      </div>
+    </div>
+</body>
+</html>

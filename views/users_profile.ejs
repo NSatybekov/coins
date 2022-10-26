@@ -9,10 +9,14 @@
 </head>
 <body>
   <%- include('header.ejs')%>
-    <h1>Hi there <%= username %></h1>
-    <a href="/users"> go to users list </a>
-    <form action="/logout" method="POST">
-      <button type="submit">Log Out</button>
-    </form>
+    <h1> <%= title %> </h1>
+    <p> Profile name :  <%= name %> </p>
+    <p> Coins amount : <%= coins %> </p>
+    <p> User role : <%= role %> </p>
+    <p> <%=  description%> </p>
+
+ 
+        <p > <a href= <%= coinUrl  %> >> Send coins </a> </p>
+
 </body>
 </html>

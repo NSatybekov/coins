@@ -6,3 +6,38 @@ body {
 a {
   color: #00B7FF;
 }
+
+.header {
+  text-align: center;
+  background: #d39b00;
+  color: white;
+  font-size: 20px;
+  width:  100%;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav_links {
+  padding: 28 px;
+}
+
+.nav_links li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.nav_links li a {
+  text-decoration: none;
+  padding: 5px;
+  color: black;
+}
+
+.desc_field {
+  width: 60%;
+  height: 50px;
+}
