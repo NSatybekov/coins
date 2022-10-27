@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -5,7 +10,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session')
 const passportConfig = require('./config/passport')
-const flash = require('express-flash')
 const compression = require("compression")
 const helmet = require("helmet")
 
@@ -23,7 +27,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static("public"))
-app.use(flash())
 app.use(compression())
 app.use(helmet())
 
