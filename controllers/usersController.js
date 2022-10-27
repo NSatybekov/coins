@@ -12,7 +12,7 @@ exports.index = (req,res) => {
 } // finding users from database, map method returns usernames
 
 
-exports.profile = (req,res, next) => {
+exports.profile = (req,res, next) => { // made mistake not usync async await - probably it caused speed of program 
     User.findById(req.params.id)
         .populate("receivedTransactions").populate({path: "receivedTransactions", populate : {path: "sender"}}) // populating chained data from database to show it to user  (вложенность объектов)
         .populate("sendedTransactions").populate({path: "sendedTransactions", populate : {path: "receiver"}})
@@ -126,3 +126,4 @@ async function changeBalanceOfUsers(senderProfile, receiverProfile, transaction,
                     }        
                     )
 }
+

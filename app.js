@@ -6,6 +6,8 @@ var logger = require('morgan');
 const session = require('express-session')
 const passportConfig = require('./config/passport')
 const flash = require('express-flash')
+const compression = require("compression")
+const helmet = require("helmet")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -22,7 +24,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static("public"))
 app.use(flash())
-
+app.use(compression())
+app.use(helmet())
 
 
 app.use(session(passportConfig.sessionDetails))
